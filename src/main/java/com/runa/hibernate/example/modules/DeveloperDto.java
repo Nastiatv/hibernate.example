@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
-//@Data
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class DeveloperDto {
@@ -50,37 +51,5 @@ public class DeveloperDto {
 		entity.setLastName(dto.getLastName());
 		entity.setExperience(dto.getExperience());
 		return entity;
-	}
-
-	public long getId() {
-		return id;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public int getExperience() {
-		return experience;
-	}
-
-	public void setExperience(int experience) {
-		this.experience = experience;
 	}
 }
