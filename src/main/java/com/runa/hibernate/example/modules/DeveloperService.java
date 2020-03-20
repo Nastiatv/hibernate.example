@@ -8,7 +8,10 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 @Transactional
 public class DeveloperService implements IDeveloperService {
 
@@ -37,6 +40,7 @@ public class DeveloperService implements IDeveloperService {
 	@Override
 	public void deleteDeveloperById(Long id) {
 		developerDao.delete(id);
+		log.info("User deleted");
 	}
 
 	@Override
@@ -46,5 +50,7 @@ public class DeveloperService implements IDeveloperService {
 		existingDeveloper.setFirstName(developerDto.getFirstName());
 		existingDeveloper.setLastName(developerDto.getLastName());
 		developerDao.update(existingDeveloper);
+		log.info("User successfully updated");
+		
 	}
 }
